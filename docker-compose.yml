@@ -50,7 +50,13 @@ services:
           SERVICE_TAGS: dev
           SERVICE_NAME: mysql
         networks:
-          - app-network     
+          - app-network   
+    redis-cluster:
+        container_name: redis-cluster
+        image: grokzen/redis-cluster:5.0.4
+        restart: always
+        networks:
+            - app-network 
           
 #Docker Networks
 networks:
